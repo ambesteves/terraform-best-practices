@@ -29,3 +29,14 @@ module "website_s3_bucket" {
     Environment = "dev"
   }
 }
+
+module "website_s3_bucket_2" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "balde3-terraform-best-practices2"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
