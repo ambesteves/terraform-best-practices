@@ -1,9 +1,9 @@
 terraform {
-    backend "s3"{
-        bucket   = "balde3-terraform-best-practices-1"
-        key      = "terraform.tfstate"
-        region   = "us-east-1"
-        dynamodb_table = "terraform_locks"
-    }
+  backend "s3" {
+    bucket = "balde3-backend-terraform"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+    # dynamodb_table = "terraform_locks"
+  }
 
 }
