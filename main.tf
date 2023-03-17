@@ -46,3 +46,11 @@ module "website_s3_bucket_2" {
     Environment = var.environment
   }
 }
+
+resource "aws_s3_object_copy" "s3_bucket_copy" {
+  bucket = var.website_s3_bucket_1_name
+  for_each = fileset("./www/", "**")
+  key    = each.value
+  source = "./www/${each.value}"
+ 
+}
